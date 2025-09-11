@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  build:
+    commands:
+      - echo "Building static website..."
+      # If you had React or Node app, you would run `npm install && npm run build`
+      # For simple static HTML, just copy files
+  post_build:
+    commands:
+      - echo "Build completed. Preparing artifacts..."
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: .   # root folder where index.html exists
